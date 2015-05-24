@@ -36,5 +36,5 @@ SD <- tbl_df(sd)
 almost_tidy <- select(sd, subject, Activity, Avg, SD)
 TidyData <- summarize(group_by(almost_tidy, subject, Activity), AvgMean= mean(Avg), AvgSD = mean(SD))
 TidyData
-
+write.table(TidyData, file = "./TidyData.txt", row.names = FALSE)
 
